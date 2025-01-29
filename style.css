@@ -1,0 +1,926 @@
+/* ----- POPPINS FONT Link ----- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* ----- VARIABLES ----- */
+:root {
+    --body-color: #fff;
+    --color-purple: #3B1C32;
+
+    --text-color-second: #1A1A1D;
+    --text-color-third: #522258;
+
+    --first-color: #A64D79;
+    --first-color-hover: #6A1E55;
+
+    --second-color: #A64D79;
+    --third-color: #441752;
+    --first-shadow-color: #1A1A1D;
+
+}
+
+/* ----- DARK THEME ----- */
+.dark-theme {
+    --body-color: #1A1A1D;
+    /* dark background */
+    --text-color-second: #fff;
+    /* light text */
+    --text-color-third: #522258;
+}
+
+
+/* Dark theme-specific adjustments in the second CSS */
+body.dark-theme {
+    background-color: var(--body-color);
+    color: var(--text-color-second);
+}
+
+/* Navbar Dark Theme */
+nav.dark-theme {
+    background: var(--body-color);
+}
+
+/* Featured Text Box in Dark Mode */
+.featured-text.dark-theme {
+    background: var(--body-color);
+    color: var(--text-color-second);
+}
+
+/* Footer Dark Mode */
+footer.dark-theme {
+    background: var(--body-color);
+    color: var(--text-color-second);
+}
+
+/* Other components (buttons, links) in dark theme */
+.btn.dark-theme {
+    background: var(--first-color);
+}
+
+.nav-link.dark-theme {
+    color: var(--text-color-second);
+}
+
+
+/* ----- BASE ----- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ----- SMOOTH SCROLL ----- */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ----- CHANGE THE SCROLL BAR DESIGN ----- */
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 25px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #bbb;
+}
+
+
+/* ---##-- REUSABLE CSS --##--- */
+
+/* ----- GLOBAL BUTTON DESIGN ----- */
+.btn {
+    font-weight: 500;
+    padding: 12px 20px;
+    background: black;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.btn>i {
+    margin-left: 10px;
+}
+
+.btn:hover {
+    background: var(--second-color);
+    color: var(--color-purple);
+}
+
+/* ----- GLOBAL ICONS DESIGN ----- */
+i {
+    font-size: 16px;
+}
+
+/* ------- BASE -------- */
+body {
+    background: var(--body-color);
+}
+
+.container {
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+    /* not mandatory */
+}
+
+/* ----- NAVIGATION BAR ----- */
+nav {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 90px;
+    line-height: 90px;
+    background: var(--body-color);
+    padding-inline: 9vw;
+    transition: .3s;
+    z-index: 100;
+}
+
+.nav-logo {
+    position: relative;
+}
+
+.nav-name {
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--text-color-third);
+}
+
+.nav-logo span {
+    position: absolute;
+    top: -15px;
+    right: -20px;
+    font-size: 5em;
+    color: var(--text-color-second);
+}
+
+.nav-menu,
+.nav_menu_list {
+    display: flex;
+}
+
+.nav-menu .nav_list {
+    list-style: none;
+    position: relative;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-color-second);
+    font-weight: 500;
+    padding-inline: 15px;
+    margin-inline: 20px;
+}
+
+.nav-menu-btn {
+    display: none;
+}
+
+.nav-menu-btn i {
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.active-link {
+    position: relative;
+    color: var(--first-color);
+    transition: .3;
+}
+
+.active-link::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    transform: translate(-50%, -50%);
+    width: 5px;
+    height: 5px;
+    background: var(--first-color);
+    border-radius: 50%;
+}
+
+
+/* ----- WRAPPER DESIGN ----- */
+.wrapper {
+    padding-inline: 10vw;
+}
+
+/* ----- FEATURED BOX ----- */
+.featured-box {
+    position: relative;
+    display: flex;
+    height: 100vh;
+    min-height: 700px;
+}
+
+/* ----- FEATURED TEXT BOX ----- */
+.featured-text {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    min-height: 80vh;
+    flex-direction: column;
+    width: 50%;
+    padding-left: 20px;
+}
+
+.featured-text-card span {
+    background: var(--third-color);
+    color: var(--body-color);
+    padding: 3px 8px;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+.featured-text-card span:hover {
+    background: var(--body-color);
+    color: var(--first-color);
+    padding: 3px 8px;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+
+.featured-name {
+    font-size: 50px;
+    font-weight: 600;
+    color: var(--text-color-second);
+    margin-block: 20px;
+}
+
+.typedText {
+    text-transform: capitalize;
+    color: var(--text-color-third);
+}
+
+.featured-text-info {
+    font-size: 15px;
+    margin-bottom: 30px;
+    color: var(--text-color-second);
+}
+
+.featured-text-btn {
+    display: flex;
+    gap: 20px;
+}
+
+.featured-text-btn>.blue-btn {
+    background: var(--first-color);
+    color: var(--color-purple);
+}
+
+.featured-text-btn>.blue-btn:hover {
+    background: var(--first-shadow-color);
+}
+
+.social_icons {
+    display: flex;
+    margin-top: 5em;
+    gap: 30px;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+.icon i:hover {
+    color: var(--first-color);
+}
+
+/* ----- FEATURED IMAGE BOX ----- */
+.featured-image {
+    display: flex;
+    justify-content: right;
+    align-content: center;
+    min-height: 80vh;
+    width: 50%;
+}
+
+.image {
+    margin: auto 0;
+    width: 380px;
+    height: 380px;
+    animation: imgFloat 7s ease-in-out infinite;
+}
+
+.image img {
+    width: 380px;
+    height: 380px;
+    object-fit: contain;
+}
+
+@keyframes imgFloat {
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+.scroll-btn {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    translate: -50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+    gap: 5px;
+    text-decoration: none;
+    color: var(--body-color);
+    background: var(--color-purple);
+    border-radius: 30px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+}
+
+.scroll-btn i {
+    font-size: 20px;
+}
+
+.scroll-icon-box .scroll-btn:hover {
+    background-color: var(--second-color);
+}
+
+/* ----- MAIN BOX ----- */
+.section {
+    padding-block: 5em;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 50px;
+}
+
+.col {
+    display: flex;
+    width: 50%;
+}
+
+/* -- ## --- RESUABLE CSS -- ## -- */
+.top-header {
+    text-align: center;
+    margin-bottom: 5em;
+}
+
+.top-header h1 {
+    font-weight: 600;
+    color: var(--text-color-second);
+    margin-bottom: 10px;
+}
+
+
+.top-header h1:hover  {
+    color: var(--first-color);
+}
+
+.top-header span {
+    color: #999;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-color-second);
+    margin-bottom: 15px;
+}
+
+/* ----- ABOUT INFO ----- */
+.about-info {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-block: 30px 70px;
+    padding-inline: 20px;
+    width: 100%;
+    background: var(--color-purple);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    border-radius: 20px;
+}
+
+/* .about-info h3{
+    color: #fff;
+} */
+.about-info p {
+    text-align: center;
+    font-size: 15px;
+    color: #fff;
+}
+
+.about-btn button {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    background: var(--first-color);
+    color: var(--color-purple);
+    border-radius: 30px;
+}
+
+.about-btn button:hover {
+    background: var(--first-shadow-color);
+    color: var(--body-color);
+}
+
+/* ----- ABOUT / SKILLS BOX ----- */
+.skills-box {
+    margin: 10px;
+}
+
+.skills-header {
+    margin-bottom: 30px;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.skills-list span {
+    font-size: 14px;
+    background: var(--first-color);
+    color: var(--color-purple);
+    padding: 2px 10px;
+    border-radius: 5px;
+}
+
+.skills-list span:hover {
+    background-color: var(--color-purple);
+    color: var(--body-color);
+}
+
+/* ----- PROJECTS BOX ----- */
+.project-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.project-box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 30%;
+    height: 250px;
+    background: var(--color-purple);
+    border-radius: 20px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    overflow: hidden;
+}
+
+.project-container h3 {
+    color: #fff;
+}
+
+.project-box>i {
+    font-size: 50px;
+    color: #fff;
+    margin-bottom: 25px;
+}
+
+.project-box label {
+    font-size: 15px;
+    color: #fff;
+}
+
+.project-box::after,
+.contact-info::after {
+    content: "";
+    position: absolute;
+    bottom: -100%;
+    background: var(--second-color);
+    width: 100%;
+    height: 100%;
+    transition: .4s;
+    z-index: 1;
+}
+
+.project-box:hover.project-box::after,
+.contact-info:hover.contact-info::after {
+    bottom: 0;
+}
+
+.project-box:hover.project-box i,
+.project-box:hover.project-box>h3,
+.project-box:hover.project-box>label {
+    color: var(--color-purple);
+    z-index: 2;
+}
+
+/* ----- CONTACT BOX ----- */
+.contact-info {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 30px;
+    width: 100%;
+    height: 315px;
+    background: var(--second-color);
+    border-radius: 10px;
+    box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
+    overflow: hidden;
+}
+
+.contact-info>h2 {
+    color: var(--color-purple);
+    margin-bottom: 20px;
+}
+
+.contact-info>p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-purple);
+    margin-block: 5px;
+}
+
+.contact-info p>i {
+    font-size: 18px;
+}
+
+.contact-info::after {
+    background: var(--color-purple);
+}
+
+.contact-info:hover.contact-info h2,
+.contact-info:hover.contact-info p,
+.contact-info:hover.contact-info i {
+    color: #fff;
+    z-index: 2;
+}
+
+/* ----- CONTACT FORM ----- */
+.form-control {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.form-inputs {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.input-field {
+    width: 50%;
+    height: 55px;
+    background: transparent;
+    border: 2px solid #AAA;
+    border-radius: 10px;
+    padding-inline: 20px;
+    outline: none;
+}
+
+textarea {
+    width: 100%;
+    height: 250px;
+    background: transparent;
+    border: 2px solid #AAA;
+    border-radius: 10px;
+    padding: 15px 20px;
+    outline: none;
+    resize: none;
+}
+
+.form-button>.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--second-color);
+    color: var(--color-purple);
+}
+
+.form-button>.btn:hover {
+    background: var(--text-color-second);
+    color: var(--body-color);
+}
+
+.form-button i {
+    font-size: 18px;
+    rotate: -45deg;
+}
+
+/* ----- FOOTER BOX ----- */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 30px;
+    background: var(--body-color);
+    padding-block: 40px 60px;
+    color: var(--text-color-second);
+}
+
+.top-footer p {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.top-footer:hover {
+    color: var(--first-color);
+}
+
+.middle-footer .footer-menu {
+    display: flex;
+}
+
+.footer_menu_list {
+    list-style: none;
+}
+
+.footer_menu_list a {
+    text-decoration: none;
+    color: var(--text-color-second);
+    font-weight: 500;
+    margin-inline: 20px;
+}
+
+.footer-menu .footer_menu_list a:hover {
+    color: var(--first-color);
+}
+
+
+.footer-social-icons {
+    display: flex;
+    gap: 30px;
+}
+
+.bottom-footer {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+
+/* ----- MEDIA QUERY == 1024px / RESPONSIVE ----- */
+@media only screen and (max-width: 1024px) {
+    .featured-text {
+        padding: 0;
+    }
+
+    .image,
+    .image img {
+        width: 320px;
+        height: 320px;
+    }
+}
+
+/* ----- MEDIA QUERY == 900px / RESPONSIVE ----- */
+@media only screen and (max-width: 900px) {
+    .nav-button {
+        display: none;
+    }
+
+    .nav-menu.responsive {
+        left: 0;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(20px);
+        width: 100%;
+        min-height: 450px;
+        height: 90vh;
+        transition: .3s;
+    }
+
+    .nav_menu_list {
+        flex-direction: column;
+    }
+
+    .nav-menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .featured-box {
+        flex-direction: column;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    .featured-text {
+        width: 100%;
+        order: 2;
+        justify-content: center;
+        align-content: flex-start;
+        min-height: 60vh;
+    }
+
+    .social_icons {
+        margin-top: 2em;
+    }
+
+    .featured-image {
+        order: 1;
+        justify-content: center;
+        min-height: 150px;
+        width: 100%;
+        margin-top: 65px;
+    }
+
+    .image,
+    .image img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 50px;
+    }
+
+    .col {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .about-info,
+    .contact-info {
+        width: 100%;
+    }
+
+    .project-container {
+        justify-content: center;
+    }
+
+    .project-box {
+        width: 80%;
+    }
+
+}
+
+/* ----- MEDIA QUERY == 540px / RESPONSIVE ----- */
+
+@media only screen and (max-width: 540px) {
+    .featured-name {
+        font-size: 40px;
+    }
+
+    .project-box {
+        width: 100%;
+    }
+
+    .form-inputs {
+        flex-direction: column;
+    }
+
+    .input-field {
+        width: 100%;
+    }
+}
+
+
+/* toggle Started From */
+
+/* Base styles for the toggle */
+.switch {
+    margin-top: 1.8rem;
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    /* Slightly bigger width to accommodate text */
+    height: 27px;
+    /* Slightly bigger height */
+}
+
+/* Hide the default checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Style the slider (the round part) */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--text-color-second);
+    /* Light gray background */
+    transition: 0.4s;
+    border-radius: 50px;
+    /* Round edges */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
+    /* Padding to space out the text labels */
+    color: var(--body-color);
+}
+
+/* The round part of the slider */
+.slider:before {
+    content: "";
+    position: absolute;
+    height: 18px;
+    /* Smaller size */
+    width: 18px;
+    /* Smaller size */
+    border-radius: 50%;
+    /* Make it round */
+    left: 4px;
+    /* Smaller padding */
+    bottom: 4px;
+    /* Smaller padding */
+    background-color: var(--body-color);
+    /* White color */
+    transition: 0.4s;
+}
+
+/* Label styles */
+.label-light,
+.label-dark {
+    font-size: 12px;
+    position: absolute;
+}
+
+.label-light {
+    left: 10px;
+}
+
+.label-dark {
+    right: 10px;
+    opacity: 0.5;
+}
+
+/* When the checkbox is checked, move the slider to the right */
+input:checked+.slider {
+    background-color: var(--color-purple);
+    /* Green background when active */
+}
+
+input:checked+.slider:before {
+    transform: translateX(30px);
+    /* Move the round part to the right */
+}
+
+/* When checked, adjust the label opacity */
+input:checked+.slider .label-light {
+    opacity: 0.5;
+    /* Light text fades when dark theme is active */
+}
+
+input:checked+.slider .label-dark {
+    opacity: 1;
+    /* Dark text appears when dark theme is active */
+}
+
+/* Toggle Ended From */
+
+/* social icons Started */
+
+.social_icons .icon a {
+    text-decoration: none;
+    color: var(--text-color-second);
+}
+
+
+.social_icons .icon a.dark-theme {
+    text-decoration: none;
+    color: var(--body-color);
+}
+
+/* social icons Ended */
